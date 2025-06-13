@@ -356,26 +356,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#dataTable').DataTable({
-                columnDefs: [
-                    { targets: [1,2,3,4,7,8,9,10,11,12,14,15,16,18,19,20,21,22,23,24,25,26], visible: false },
-                    // Mostra apenas colunas principais por padrão
-                ],
-                dom: 'Bfrtip',
-                buttons: [
-                    'colvis', // botão para mostrar/ocultar colunas
-                    'csv', 'excel', 'pdf'
-                ],
-                language: {
-                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
-                }
-            });
+            // Primeiro carrega os dados, depois inicializa o DataTable
+            loadData();
         });
         async function loadData() {
             showLoading(true);
             try {
                 // Carregar dados do JSON atualizado
-                const response = await fetch('../dados/dicionario_dados.json');
+                const response = await fetch('/der_dicionario_dados/dados/dicionario_dados.json');
                 const data = await response.json();
                 originalData = data;
                 initializeTable(data);
@@ -387,6 +375,158 @@
             }
             showLoading(false);
         }
+        
+        function initializeTable(data) {
+            const tbody = document.getElementById('dataTableBody');
+            tbody.innerHTML = '';
+            
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row['nome do arquivo'] || '-'}</td>
+                    <td>${row.tema || '-'}</td>
+                    <td>${row.responsável || '-'}</td>
+                    <td>${row['observações gerais'] || '-'}</td>
+                    <td>${row['exemplo de valor'] || '-'}</td>
+                    <td>${row.idioma || '-'}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary" onclick="viewDetails(${index})">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Re-inicializa o DataTable após carregar os dados
+            if ($.fn.DataTable.isDataTable('#dataTable')) {
+                $('#dataTable').DataTable().destroy();
+            }
+            
+            $('#dataTable').DataTable({
+                columnDefs: [
+                    { targets: [1,2,3,4,5], visible: true },
+                    // Mostra apenas colunas principais por padrão
+                ],
+                dom: 'Bfrtip',
+                buttons: [
+                    'colvis', // botão para mostrar/ocultar colunas
+                    'csv', 'excel', 'pdf'
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                }
+            });
+        }
+        
+        function updateStatistics(data) {
+            const uniqueFiles = [...new Set(data.map(row => row['nome do arquivo']))].length;
+            const totalFields = data.length;
+            const uniqueDatasets = [...new Set(data.map(row => row.tema))].length;
+            
+            document.getElementById('totalDatasets').textContent = uniqueDatasets;
+            document.getElementById('totalFields').textContent = totalFields;
+            document.getElementById('totalFiles').textContent = uniqueFiles;
+            document.getElementById('lastUpdate').textContent = '2025-06-13';
+        }
+        
+        function populateFilters(data) {
+            // Populate file filter
+            const files = [...new Set(data.map(row => row['nome do arquivo']))].sort();
+            const fileFilter = document.getElementById('fileFilter');
+            fileFilter.innerHTML = '<option value="">Todos os arquivos</option>';
+            files.forEach(file => {
+                if (file) {
+                    fileFilter.innerHTML += `<option value="${file}">${file}</option>`;
+                }
+            });
+
+            // Populate type filter
+            const types = [...new Set(data.map(row => row['tipo de arquivo']))].sort();
+            const typeFilter = document.getElementById('typeFilter');
+            typeFilter.innerHTML = '<option value="">Todos os tipos</option>';
+            types.forEach(type => {
+                if (type) {
+                    typeFilter.innerHTML += `<option value="${type}">${type}</option>`;
+                }
+            });
+
+            // Populate theme filter
+            const themes = [...new Set(data.map(row => row.tema))].sort();
+            const themeFilter = document.getElementById('themeFilter');
+            themeFilter.innerHTML = '<option value="">Todos os temas</option>';
+            themes.forEach(theme => {
+                if (theme) {
+                    themeFilter.innerHTML += `<option value="${theme}">${theme}</option>`;
+                }
+            });
+        }
+        
+        function showLoading(show) {
+            const overlay = document.getElementById('loadingOverlay');
+            overlay.style.display = show ? 'flex' : 'none';
+        }
+        
+        function showError(message) {
+            const alertHtml = `
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+            document.querySelector('.container').insertAdjacentHTML('afterbegin', alertHtml);
+        }
+        
+        function viewDetails(index) {
+            const item = originalData[index];
+            let detailsHtml = '<div class="row">';
+            
+            Object.keys(item).forEach(key => {
+                if (item[key]) {
+                    detailsHtml += `
+                        <div class="col-md-6 mb-2">
+                            <strong>${key}:</strong><br>
+                            <span class="text-muted">${item[key]}</span>
+                        </div>
+                    `;
+                }
+            });
+            
+            detailsHtml += '</div>';
+            
+            // Create modal
+            const modalHtml = `
+                <div class="modal fade" id="detailsModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Detalhes: ${item['nome do arquivo']}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                ${detailsHtml}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Remove existing modal
+            const existingModal = document.getElementById('detailsModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Add new modal
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            const modal = new bootstrap.Modal(document.getElementById('detailsModal'));
+            modal.show();
+        }
+        
+        let originalData = [];
     </script>
 </body>
 </html>
