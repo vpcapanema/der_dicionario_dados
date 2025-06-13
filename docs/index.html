@@ -361,9 +361,8 @@
         });
         async function loadData() {
             showLoading(true);
-            try {
-                // Carregar dados do JSON atualizado
-                const response = await fetch('/der_dicionario_dados/dados/dicionario_dados.json');
+            try {                // Carregar dados do JSON atualizado
+                const response = await fetch('./assets/dicionario_dados.json');
                 const data = await response.json();
                 originalData = data;
                 initializeTable(data);
