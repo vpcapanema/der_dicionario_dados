@@ -3,6 +3,9 @@ layout: default
 title: "Consultar Dicionário"
 ---
 
+<!-- Arquivo desativado para evitar conflito com index.html -->
+<!-- Conteúdo antigo preservado apenas para referência -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

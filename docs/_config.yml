@@ -3,13 +3,6 @@ description: "Portal interativo do dicionário de dados abertos do DER-SP"
 url: "https://vpcapanema.github.io"
 baseurl: "/der_dicionario_dados"
 
-# Jekyll configuration
-plugins:
-  - jekyll-relative-links
-
-# Theme
-remote_theme: pages-themes/minimal@v0.2.0
-
 # Navigation
 navigation:
   - title: "Consultar Dados"
