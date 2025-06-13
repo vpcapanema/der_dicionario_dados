@@ -384,67 +384,7 @@ class DataPublisher {
         return recommendations;
     }
 
-    // Export functionality
-    exportDictionaryToMultipleFormats(dictionaryData) {
-        const exports = {};
-        
-        // CSV format
-        exports.csv = this.exportToCSV(dictionaryData);
-        
-        // JSON format
-        exports.json = this.exportToJSON(dictionaryData);
-        
-        // XML format (basic)
-        exports.xml = this.exportToXML(dictionaryData);
-        
-        return exports;
-    }
-
-    exportToCSV(data) {
-        if (!data || data.length === 0) return '';
-        
-        const headers = Object.keys(data[0]);
-        const csvRows = [headers.join(',')];
-        
-        data.forEach(row => {
-            const values = headers.map(header => {
-                const value = row[header] || '';
-                return `"${value.toString().replace(/"/g, '""')}"`;
-            });
-            csvRows.push(values.join(','));
-        });
-        
-        return csvRows.join('\n');
-    }
-
-    exportToJSON(data) {
-        return JSON.stringify(data, null, 2);
-    }
-
-    exportToXML(data) {
-        let xml = '<?xml version="1.0" encoding="UTF-8"?>\n<dicionario>\n';
-        
-        data.forEach(item => {
-            xml += '  <campo>\n';
-            Object.keys(item).forEach(key => {
-                const value = item[key] || '';
-                xml += `    <${key}>${this.escapeXML(value)}</${key}>\n`;
-            });
-            xml += '  </campo>\n';
-        });
-        
-        xml += '</dicionario>';
-        return xml;
-    }
-
-    escapeXML(str) {
-        return str.toString()
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#039;');
-    }
+    // Substituir toda a lógica de exportação e envio para trabalhar apenas com o arquivo dicionario_dados.json
 }
 
 // Global publisher instance

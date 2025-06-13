@@ -6,14 +6,14 @@ class DataDictionary {
         this.currentFilters = {};
     }
 
-    async loadData(csvPath = '../dados/dicionario_dados_completo_exemplo.csv') {
+    async loadData(jsonPath = '../dados/dicionario_dados.json') {
         try {
-            const response = await fetch(csvPath);
+            const response = await fetch(jsonPath);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const csvText = await response.text();
-            this.data = this.parseCSV(csvText);
+            const jsonData = await response.json();
+            this.data = jsonData;
             this.filteredData = [...this.data];
             return this.data;
         } catch (error) {

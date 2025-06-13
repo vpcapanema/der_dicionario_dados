@@ -1,0 +1,23 @@
+name: Auto Commit JSON
+
+on:
+  push:
+    paths:
+      - 'dados/dicionario_dados.json'
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Configurar Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Commit e Push automático
+        run: |
+          git add dados/dicionario_dados.json
+          git commit -m "Atualização automática do dicionário de dados JSON" || echo "Nada para commitar"
+          git push
