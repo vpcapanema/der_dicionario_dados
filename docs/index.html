@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dicionário de Dados DER-SP</title>
-    <link rel="icon" href="/der_dicionario_dados/assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
@@ -171,8 +171,7 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
-        }
-        @media (max-width: 768px) {
+        }        @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
             }
@@ -182,6 +181,25 @@
             .export-section {
                 flex-direction: column;
             }
+        }
+        
+        /* Alinhamento dos controles DataTable */
+        #dataTable_length label,
+        #dataTable_filter label {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        #dataTable_length select {
+            width: auto;
+            display: inline-block;
+        }
+        
+        #dataTable_filter input {
+            width: auto;
+            display: inline-block;
         }
     </style>
 </head>
@@ -290,10 +308,12 @@
                 </div>
             </div>
         </div>
-        <div class="data-table-container">
-            <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="data-table-container">            <div class="d-flex justify-content-between align-items-center mb-3">
                 <h3><i class="fas fa-table me-2"></i>Dicionário de Dados</h3>
                 <div class="export-section">
+                    <button class="btn btn-outline-secondary btn-sm" onclick="toggleColumns()">
+                        <i class="fas fa-columns me-1"></i>Colunas
+                    </button>
                     <button class="btn btn-outline-primary btn-sm" onclick="exportCSV()">
                         <i class="fas fa-file-csv me-1"></i>CSV
                     </button>
@@ -305,6 +325,16 @@
                     </button>
                 </div>
             </div>
+              <!-- Controles do DataTable -->
+            <div class="row mb-3 align-items-center">
+                <div class="col-md-6">
+                    <div id="dataTable_length" class="d-flex align-items-center"></div>
+                </div>
+                <div class="col-md-6">
+                    <div id="dataTable_filter" class="d-flex justify-content-end align-items-center"></div>
+                </div>
+            </div>
+            
             <div class="table-responsive">
                 <table id="dataTable" class="table table-hover">
                     <thead>
@@ -387,8 +417,15 @@
             
             const tbody = document.getElementById('dataTableBody');
             tbody.innerHTML = '';
-            
-            data.forEach((row, index) => {
+              data.forEach((row, index) => {
+                // Formatar data para dd/mm/aaaa
+                const formatDate = (dateStr) => {
+                    if (!dateStr || dateStr === '-') return '-';
+                    const date = new Date(dateStr);
+                    if (isNaN(date.getTime())) return dateStr; // Se não for uma data válida, retorna original
+                    return date.toLocaleDateString('pt-BR');
+                };
+                
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td>${row['nome do arquivo'] || '-'}</td>
@@ -403,7 +440,7 @@
                     <td>${row['cobertura temporal'] || '-'}</td>
                     <td>${row['cobertura geográfica'] || '-'}</td>
                     <td>${row['frequência de atualização'] || '-'}</td>
-                    <td>${row['data da última atualização'] || '-'}</td>
+                    <td>${formatDate(row['data da última atualização'])}</td>
                     <td>${row['observações gerais'] || '-'}</td>
                     <td>${row.campo || '-'}</td>
                     <td>${row['tipo do campo'] || '-'}</td>
@@ -426,36 +463,64 @@
                     </td>
                 `;
                 tbody.appendChild(tr);
-            });
-
-            // Inicializa o DataTable após popular os dados
+            });// Inicializa o DataTable após popular os dados
             $('#dataTable').DataTable({
                 columnDefs: [
                     { targets: [1,2,3,7,8,9,10,11,12,14,15,16,18,19,20,21,22,23,24,25,26,27], visible: false },
                     { targets: [28], orderable: false }
                 ],
-                dom: 'Bfrtip',
-                buttons: [
-                    'colvis', 
-                    'csv', 'excel', 'pdf'
-                ],
-                language: {
-                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                dom: 'lf<"table-responsive"t>ip',                language: {
+                    "sEmptyTable": "Nenhum registro encontrado",
+                    "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "Exibir _MENU_ resultados por página",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    "sSearch": "Pesquisar:",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Ordenar colunas de forma ascendente",
+                        "sSortDescending": ": Ordenar colunas de forma descendente"
+                    }
                 },
                 pageLength: 25,
                 responsive: true
             });
         }
-        
-        function updateStatistics(data) {
+          function updateStatistics(data) {
             const uniqueFiles = [...new Set(data.map(row => row['nome do arquivo']))].length;
             const totalFields = data.length;
             const uniqueDatasets = [...new Set(data.map(row => row.tema))].length;
             
+            // Formatar data para dd/mm/aaaa
+            const formatDate = (dateStr) => {
+                if (!dateStr || dateStr === '-') return 'N/A';
+                const date = new Date(dateStr);
+                if (isNaN(date.getTime())) return dateStr; // Se não for uma data válida, retorna original
+                return date.toLocaleDateString('pt-BR');
+            };
+            
+            // Buscar a data mais recente
+            const dates = data.map(row => row['data da última atualização']).filter(date => date && date !== '-');
+            let latestDate = 'N/A';
+            if (dates.length > 0) {
+                const latestDateObj = new Date(Math.max(...dates.map(d => new Date(d))));
+                latestDate = formatDate(latestDateObj.toISOString().split('T')[0]);
+            }
+            
             document.getElementById('totalDatasets').textContent = uniqueDatasets;
             document.getElementById('totalFields').textContent = totalFields;
             document.getElementById('totalFiles').textContent = uniqueFiles;
-            document.getElementById('lastUpdate').textContent = '2025-06-13';
+            document.getElementById('lastUpdate').textContent = latestDate;
         }
         
         function populateFilters(data) {
@@ -504,20 +569,43 @@
             `;
             document.querySelector('.container').insertAdjacentHTML('afterbegin', alertHtml);
         }
-        
-        function viewDetails(index) {
+          function viewDetails(index) {
             const item = originalData[index];
             let detailsHtml = '<div class="row">';
             
-            Object.keys(item).forEach(key => {
-                if (item[key]) {
-                    detailsHtml += `
-                        <div class="col-md-6 mb-2">
-                            <strong>${key}:</strong><br>
-                            <span class="text-muted">${item[key]}</span>
-                        </div>
-                    `;
+            // Todos os campos do JSON, incluindo vazios
+            const allFields = [
+                'nome do arquivo', 'tipo de arquivo', 'tamanho do arquivo', 'tipo de dado', 
+                'descricao do dado', 'tema', 'responsável', 'fonte', 'licença', 
+                'frequência de atualização', 'cobertura geográfica', 'data da última atualização', 
+                'observações gerais', 'campo', 'tipo do campo', 'descricao do campo', 
+                'exemplo de valor', 'obrigatório', 'domínio', 'observações do campo', 
+                'tipo de geometria', 'sistema de referência', 'camada', 'resolução espacial', 
+                'número de bandas/faixas', 'número'
+            ];
+              allFields.forEach(key => {
+                const value = item[key] || '-';
+                // Formatar data para dd/mm/aaaa se for campo de data
+                let displayValue = value;
+                if (key.toLowerCase().includes('data') && value !== '-') {
+                    const date = new Date(value);
+                    if (!isNaN(date.getTime())) {
+                        displayValue = date.toLocaleDateString('pt-BR');
+                    }
                 }
+                
+                // Aplicar padrão ABNT: primeira letra maiúscula, resto minúsculo
+                const formattedKey = key.charAt(0).toUpperCase() + key.slice(1).toLowerCase();
+                
+                detailsHtml += `
+                    <div class="col-md-6 col-lg-4 mb-2">
+                        <div class="card h-100" style="font-size: 0.85rem;">                            <div class="card-body p-2">
+                                <strong class="text-primary" style="font-size: 0.8rem;">${formattedKey}:</strong><br>
+                                <span class="text-muted" style="font-size: 0.75rem;">${displayValue}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
             });
             
             detailsHtml += '</div>';
@@ -525,13 +613,13 @@
             // Create modal
             const modalHtml = `
                 <div class="modal fade" id="detailsModal" tabindex="-1">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Detalhes: ${item['nome do arquivo']}</h5>
+                                <h5 class="modal-title">Detalhes: ${item['nome do arquivo'] || 'Arquivo'}</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" style="max-height: 70vh; overflow-y: auto;">
                                 ${detailsHtml}
                             </div>
                             <div class="modal-footer">
@@ -552,6 +640,86 @@
             document.body.insertAdjacentHTML('beforeend', modalHtml);
             const modal = new bootstrap.Modal(document.getElementById('detailsModal'));
             modal.show();
+        }
+        
+        function toggleColumns() {
+            const table = $('#dataTable').DataTable();
+            
+            // Lista de colunas para mostrar/ocultar
+            const columnNames = [
+                'Nome do Arquivo', 'Tamanho do Arquivo', 'Tipo de Arquivo', 'Tipo de Dado',
+                'Descrição do Dado', 'Tema', 'Responsável', 'Fonte', 'Licença', 'Cobertura Temporal',
+                'Cobertura Geográfica', 'Frequência de Atualização', 'Data da Última Atualização',
+                'Observações Gerais', 'Campo', 'Tipo do Campo', 'Descrição do Campo',
+                'Exemplo de Valor', 'Obrigatório', 'Domínio', 'Observações do Campo',
+                'Tipo de Geometria', 'Sistema de Referência', 'Camada', 'Resolução Espacial',
+                'Número de Bandas/Faixas', 'Número de Páginas', 'Idioma', 'Ações'
+            ];
+            
+            let modalHtml = `
+                <div class="modal fade" id="columnsModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Selecionar Colunas</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+            `;
+            
+            columnNames.forEach((name, index) => {
+                const isVisible = table.column(index).visible();
+                modalHtml += `
+                    <div class="col-md-6 mb-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="${index}" 
+                                   id="col${index}" ${isVisible ? 'checked' : ''}>
+                            <label class="form-check-label" for="col${index}" style="font-size: 0.9rem;">
+                                ${name}
+                            </label>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            modalHtml += `
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-primary" onclick="applyColumnVisibility()">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Remove modal existente
+            const existingModal = document.getElementById('columnsModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Adiciona novo modal
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            const modal = new bootstrap.Modal(document.getElementById('columnsModal'));
+            modal.show();
+        }
+        
+        function applyColumnVisibility() {
+            const table = $('#dataTable').DataTable();
+            const checkboxes = document.querySelectorAll('#columnsModal input[type="checkbox"]');
+            
+            checkboxes.forEach(checkbox => {
+                const columnIndex = parseInt(checkbox.value);
+                const isChecked = checkbox.checked;
+                table.column(columnIndex).visible(isChecked);
+            });
+            
+            // Fecha o modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('columnsModal'));
+            modal.hide();
         }
         
         let originalData = [];
