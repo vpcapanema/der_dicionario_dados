@@ -398,6 +398,22 @@
                             <input type="text" class="form-control" id="globalFileName" readonly>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Tamanho do Arquivo</label>
+                            <input type="text" class="form-control" id="globalFileSize" placeholder="Ex: 1.2 MB">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Tipo de Arquivo</label>
+                            <input type="text" class="form-control" id="globalFileType" placeholder="Ex: .csv, .shp, .tif">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Tipo de Dado</label>
+                            <input type="text" class="form-control" id="globalDataType" placeholder="Ex: tabela, vetor, raster, documento">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Descrição do Dado *</label>
+                            <textarea class="form-control" id="globalDescription" rows="3" placeholder="Descreva o propósito e conteúdo do dataset" required></textarea>
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label class="form-label">Tema *</label>
                             <select class="form-select" id="globalTheme" required>
                                 <option value="">Selecione um tema</option>
@@ -417,6 +433,10 @@
                             <input type="text" class="form-control" id="globalResponsible" placeholder="Ex: DER-SP / TI" required>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Fonte</label>
+                            <input type="text" class="form-control" id="globalSource" placeholder="Ex: Sistema X, Pesquisa Y">
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <label class="form-label">Licença *</label>
                             <select class="form-select" id="globalLicense" required>
                                 <option value="">Selecione uma licença</option>
@@ -426,6 +446,14 @@
                                 <option value="MIT">MIT</option>
                                 <option value="Outros">Outros</option>
                             </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Cobertura Temporal</label>
+                            <input type="text" class="form-control" id="globalTemporalCoverage" placeholder="Ex: 2020-2024, Mensal, etc.">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Cobertura Geográfica</label>
+                            <input type="text" class="form-control" id="globalGeoCoverage" placeholder="Ex: SP, Brasil, Específica">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Frequência de Atualização</label>
@@ -441,18 +469,60 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Cobertura Geográfica</label>
-                            <input type="text" class="form-control" id="globalGeoCoverage" placeholder="Ex: SP, Brasil, Específica">
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label class="form-label">Descrição do Dataset *</label>
-                            <textarea class="form-control" id="globalDescription" rows="3" 
-                                      placeholder="Descreva o propósito e conteúdo do dataset" required></textarea>
+                            <label class="form-label">Data da Última Atualização</label>
+                            <input type="date" class="form-control" id="globalLastUpdate">
                         </div>
                         <div class="col-12 mb-3">
                             <label class="form-label">Observações Gerais</label>
-                            <textarea class="form-control" id="globalObservations" rows="2" 
-                                      placeholder="Informações adicionais sobre o dataset"></textarea>
+                            <textarea class="form-control" id="globalObservations" rows="2" placeholder="Informações adicionais sobre o dataset"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Adicionar campos ocultos do template global -->
+            <input type="hidden" id="globalFileSize" name="tamanho do arquivo">
+            <input type="hidden" id="globalFileType" name="tipo de arquivo">
+            <input type="hidden" id="globalDataType" name="tipo de dado">
+            
+            <!-- Campos avançados colapsáveis -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <a class="btn btn-link" data-bs-toggle="collapse" href="#advancedFields" role="button" aria-expanded="false" aria-controls="advancedFields">
+                        <i class="fas fa-cogs me-2"></i>Campos Avançados do Arquivo/Dado
+                    </a>
+                </div>
+                <div class="collapse" id="advancedFields">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Tipo de Geometria</label>
+                                <input type="text" class="form-control" id="globalGeometryType" name="tipo de geometria">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Sistema de Referência</label>
+                                <input type="text" class="form-control" id="globalSRS" name="sistema de referência">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Camada</label>
+                                <input type="text" class="form-control" id="globalLayer" name="camada">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Resolução Espacial</label>
+                                <input type="text" class="form-control" id="globalResolution" name="resolução espacial">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Número de Bandas/Faixas</label>
+                                <input type="text" class="form-control" id="globalBands" name="número de bandas/faixas">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Número de Páginas</label>
+                                <input type="text" class="form-control" id="globalPages" name="número de páginas">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Idioma</label>
+                                <input type="text" class="form-control" id="globalLanguage" name="idioma">
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -307,14 +307,34 @@
                 <table id="dataTable" class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Arquivo</th>
-                            <th>Campo</th>
-                            <th>Tipo</th>
-                            <th>Descrição</th>
-                            <th>Exemplo</th>
-                            <th>Obrigatório</th>
+                            <th>Nome do Arquivo</th>
+                            <th>Tamanho do Arquivo</th>
+                            <th>Tipo de Arquivo</th>
+                            <th>Tipo de Dado</th>
+                            <th>Descrição do Dado</th>
                             <th>Tema</th>
                             <th>Responsável</th>
+                            <th>Fonte</th>
+                            <th>Licença</th>
+                            <th>Cobertura Temporal</th>
+                            <th>Cobertura Geográfica</th>
+                            <th>Frequência de Atualização</th>
+                            <th>Data da Última Atualização</th>
+                            <th>Observações Gerais</th>
+                            <th>Campo</th>
+                            <th>Tipo do Campo</th>
+                            <th>Descrição do Campo</th>
+                            <th>Exemplo de Valor</th>
+                            <th>Obrigatório</th>
+                            <th>Domínio</th>
+                            <th>Observações do Campo</th>
+                            <th>Tipo de Geometria</th>
+                            <th>Sistema de Referência</th>
+                            <th>Camada</th>
+                            <th>Resolução Espacial</th>
+                            <th>Número de Bandas/Faixas</th>
+                            <th>Número de Páginas</th>
+                            <th>Idioma</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -334,8 +354,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
     <script>
-        // ...JS igual ao index.md...
-        // (todo o JS já lido acima)
+        $(document).ready(function() {
+            $('#dataTable').DataTable({
+                columnDefs: [
+                    { targets: [1,2,3,4,7,8,9,10,11,12,14,15,16,18,19,20,21,22,23,24,25,26], visible: false },
+                    // Mostra apenas colunas principais por padrão
+                ],
+                dom: 'Bfrtip',
+                buttons: [
+                    'colvis', // botão para mostrar/ocultar colunas
+                    'csv', 'excel', 'pdf'
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json'
+                }
+            });
+        });
     </script>
 </body>
 </html>
