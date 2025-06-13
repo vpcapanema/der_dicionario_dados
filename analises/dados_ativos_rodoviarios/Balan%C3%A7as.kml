@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="balanas_der" id="balanas_der">
+	<SimpleField name="CodRegiona" type="string"></SimpleField>
+	<SimpleField name="Rodovia_1" type="string"></SimpleField>
+	<SimpleField name="Denominaca" type="string"></SimpleField>
+	<SimpleField name="KM" type="string"></SimpleField>
+	<SimpleField name="Trecho" type="string"></SimpleField>
+	<SimpleField name="Municipi_1" type="string"></SimpleField>
+	<SimpleField name="Edital" type="float"></SimpleField>
+	<SimpleField name="lat" type="float"></SimpleField>
+	<SimpleField name="long" type="float"></SimpleField>
+</Schema>
+<Folder><name>balanas_der</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 354</SimpleData>
+		<SimpleData name="Denominaca">Edgard Máximo Zambotto</SimpleData>
+		<SimpleData name="KM">63+050</SimpleData>
+		<SimpleData name="Trecho">Campo Limpo Paulista/Jarinu</SimpleData>
+		<SimpleData name="Municipi_1">Jarinu</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.16698</SimpleData>
+		<SimpleData name="long">-46.76102</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7610219495729,-23.1669845364529,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 191</SimpleData>
+		<SimpleData name="Denominaca">Geraldo de Barros</SimpleData>
+		<SimpleData name="KM">160</SimpleData>
+		<SimpleData name="Trecho">Botucatu/Santa Maria da Serra</SimpleData>
+		<SimpleData name="Municipi_1">Botucatu</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.68171</SimpleData>
+		<SimpleData name="long">-48.25520</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.2552009071288,-22.6817119254386,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 270</SimpleData>
+		<SimpleData name="Denominaca">Raposo Tavares</SimpleData>
+		<SimpleData name="KM">193,7</SimpleData>
+		<SimpleData name="Trecho">Itapetininga/Angatuba</SimpleData>
+		<SimpleData name="Municipi_1">Angatuba</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.54668</SimpleData>
+		<SimpleData name="long">-48.29451</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.2945133910556,-23.54668101011,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 270</SimpleData>
+		<SimpleData name="Denominaca">Raposo Tavares</SimpleData>
+		<SimpleData name="KM">193,7</SimpleData>
+		<SimpleData name="Trecho">Angatuba/Itapetininga</SimpleData>
+		<SimpleData name="Municipi_1">Angatuba</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.54718</SimpleData>
+		<SimpleData name="long">-48.29306</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.2930622921613,-23.5471849722081,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 042</SimpleData>
+		<SimpleData name="Denominaca">Julio da Silva, Vereador</SimpleData>
+		<SimpleData name="KM">168,615</SimpleData>
+		<SimpleData name="Trecho">Paraisópolis (MG)/São Bento do Sapucaí</SimpleData>
+		<SimpleData name="Municipi_1">São Bento do Sapucaí</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-22.67360</SimpleData>
+		<SimpleData name="long">-45.74412</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.7441186811759,-22.6735968674473,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 123</SimpleData>
+		<SimpleData name="Denominaca">Floriano Rodrigues Pinheiro</SimpleData>
+		<SimpleData name="KM">007,800</SimpleData>
+		<SimpleData name="Trecho">BR 116/Tremembé</SimpleData>
+		<SimpleData name="Municipi_1">Taubaté</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.00509</SimpleData>
+		<SimpleData name="long">-45.63950</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.6394963694048,-23.0050913075522,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 125</SimpleData>
+		<SimpleData name="Denominaca">Oswaldo Cruz</SimpleData>
+		<SimpleData name="KM">014,300</SimpleData>
+		<SimpleData name="Trecho">BR 116/SP 121</SimpleData>
+		<SimpleData name="Municipi_1">Tremembé</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-22.94940</SimpleData>
+		<SimpleData name="long">-45.61398</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.6139799051423,-22.949399988954,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 07</SimpleData>
+		<SimpleData name="Rodovia_1">SP 249</SimpleData>
+		<SimpleData name="Denominaca">Pedro Rodrigues Garcia</SimpleData>
+		<SimpleData name="KM">184</SimpleData>
+		<SimpleData name="Trecho">Taguaí/Fartura</SimpleData>
+		<SimpleData name="Municipi_1">Fartura</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.42157</SimpleData>
+		<SimpleData name="long">-49.46273</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.4627315732145,-23.421566105085,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 07</SimpleData>
+		<SimpleData name="Rodovia_1">SP 249</SimpleData>
+		<SimpleData name="Denominaca">Pedro Rodrigues Garcia</SimpleData>
+		<SimpleData name="KM">184</SimpleData>
+		<SimpleData name="Trecho">Fartura/Taguaí</SimpleData>
+		<SimpleData name="Municipi_1">Fartura</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.42229</SimpleData>
+		<SimpleData name="long">-49.46182</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.4618202368474,-23.4222921478089,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 07</SimpleData>
+		<SimpleData name="Rodovia_1">SP 270</SimpleData>
+		<SimpleData name="Denominaca">Raposo Tavares</SimpleData>
+		<SimpleData name="KM">333,9</SimpleData>
+		<SimpleData name="Trecho">Piraju/Ourinhos</SimpleData>
+		<SimpleData name="Municipi_1">Bernadino de Campos</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.10505</SimpleData>
+		<SimpleData name="long">-49.48086</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.4808647999396,-23.1050532915828,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 07</SimpleData>
+		<SimpleData name="Rodovia_1">SP 375</SimpleData>
+		<SimpleData name="Denominaca">Nelson Leopoldino</SimpleData>
+		<SimpleData name="KM">003,8</SimpleData>
+		<SimpleData name="Trecho">Divisa PR/Palmital</SimpleData>
+		<SimpleData name="Municipi_1">Palmital</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-22.90608</SimpleData>
+		<SimpleData name="long">-50.25729</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.2572914582515,-22.9060818764008,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 08</SimpleData>
+		<SimpleData name="Rodovia_1">SP 253</SimpleData>
+		<SimpleData name="Denominaca">Cunha Bueno, Deputado</SimpleData>
+		<SimpleData name="KM">169,4</SimpleData>
+		<SimpleData name="Trecho">Pradópolis/Luiz Antônio</SimpleData>
+		<SimpleData name="Municipi_1">Luiz Antônio</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-21.46002</SimpleData>
+		<SimpleData name="long">-47.85198</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.8519777418769,-21.4600163852673,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 08</SimpleData>
+		<SimpleData name="Rodovia_1">SP 253</SimpleData>
+		<SimpleData name="Denominaca">Cunha Bueno, Deputado</SimpleData>
+		<SimpleData name="KM">169,7</SimpleData>
+		<SimpleData name="Trecho">Luiz Antônio/Pradópolis</SimpleData>
+		<SimpleData name="Municipi_1">Luiz Antônio</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-21.45867</SimpleData>
+		<SimpleData name="long">-47.85447</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.8544684872837,-21.4586741007281,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 320</SimpleData>
+		<SimpleData name="Denominaca">Euclides da Cunha</SimpleData>
+		<SimpleData name="KM">637,7</SimpleData>
+		<SimpleData name="Trecho">Aparecida do Taboado (MS)/Santa Fé do Sul</SimpleData>
+		<SimpleData name="Municipi_1">Rubinéia</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-20.11606</SimpleData>
+		<SimpleData name="long">-50.98915</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.9891483139007,-20.1160593007254,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 10</SimpleData>
+		<SimpleData name="Rodovia_1">SP 066</SimpleData>
+		<SimpleData name="Denominaca">Henrique Eroles</SimpleData>
+		<SimpleData name="KM">067</SimpleData>
+		<SimpleData name="Trecho">Guararema/Mogi das Cruzes</SimpleData>
+		<SimpleData name="Municipi_1">Mogi das Cruzes</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.46244</SimpleData>
+		<SimpleData name="long">-46.07781</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.0778060385237,-23.4624438350285,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 11</SimpleData>
+		<SimpleData name="Rodovia_1">SP 310</SimpleData>
+		<SimpleData name="Denominaca">Feliciano Sales da Cunha</SimpleData>
+		<SimpleData name="KM">602</SimpleData>
+		<SimpleData name="Trecho">Sud Mennucci/Guzolândia</SimpleData>
+		<SimpleData name="Municipi_1">Sud Mennucci</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-20.62051</SimpleData>
+		<SimpleData name="long">-50.89966</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.8996578700113,-20.6205146054487,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 11</SimpleData>
+		<SimpleData name="Rodovia_1">SP 425</SimpleData>
+		<SimpleData name="Denominaca">Assis Chateaubriand</SimpleData>
+		<SimpleData name="KM">284+000</SimpleData>
+		<SimpleData name="Trecho">Penápolis/Rodovia Marechal Rondon</SimpleData>
+		<SimpleData name="Municipi_1">Penápolis</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-21.37997</SimpleData>
+		<SimpleData name="long">-50.08931</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.0893058999618,-21.3799723901628,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 12</SimpleData>
+		<SimpleData name="Rodovia_1">SP 425</SimpleData>
+		<SimpleData name="Denominaca">Assis Chateaubriand</SimpleData>
+		<SimpleData name="KM">521+806</SimpleData>
+		<SimpleData name="Trecho">Itororó (PR)/Estrela do Norte</SimpleData>
+		<SimpleData name="Municipi_1">Pirapozinho</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.61225</SimpleData>
+		<SimpleData name="long">-51.73481</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.7348055306845,-22.6122476681112,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 12</SimpleData>
+		<SimpleData name="Rodovia_1">SP 457</SimpleData>
+		<SimpleData name="Denominaca">Eduardo Gomes, Brigadeiro</SimpleData>
+		<SimpleData name="KM">081,8</SimpleData>
+		<SimpleData name="Trecho">Rancharia/Iepê</SimpleData>
+		<SimpleData name="Municipi_1">Rancharia</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-22.04580</SimpleData>
+		<SimpleData name="long">-50.79618</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.796184233267,-22.045801873021,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 12</SimpleData>
+		<SimpleData name="Rodovia_1">SP 613</SimpleData>
+		<SimpleData name="Denominaca">Arlindo Bettio</SimpleData>
+		<SimpleData name="KM">075,953</SimpleData>
+		<SimpleData name="Trecho">Rosana/Teodoro Sampaio</SimpleData>
+		<SimpleData name="Municipi_1">Rosana</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-22.51871</SimpleData>
+		<SimpleData name="long">-52.89786</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-52.8978582180508,-22.5187125729561,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 326</SimpleData>
+		<SimpleData name="Denominaca">Faria Lima, Brigadeiro</SimpleData>
+		<SimpleData name="KM">433,060</SimpleData>
+		<SimpleData name="Trecho">Colômbia/Barretos</SimpleData>
+		<SimpleData name="Municipi_1">Barretos</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-20.47184</SimpleData>
+		<SimpleData name="long">-48.61560</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.6156008984154,-20.4718426645389,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 413</SimpleData>
+		<SimpleData name="Denominaca">Norival Pereira Mattos</SimpleData>
+		<SimpleData name="KM">024,2</SimpleData>
+		<SimpleData name="Trecho">Divisa MG/SP 425</SimpleData>
+		<SimpleData name="Municipi_1">Miguelópolis</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-20.05118</SimpleData>
+		<SimpleData name="long">-48.23238</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.2323763561418,-20.0511792439415,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 425</SimpleData>
+		<SimpleData name="Denominaca">Assis Chateaubriand</SimpleData>
+		<SimpleData name="KM">087,45</SimpleData>
+		<SimpleData name="Trecho">Guaíra/Barretos</SimpleData>
+		<SimpleData name="Municipi_1">Barretos</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-20.48513</SimpleData>
+		<SimpleData name="long">-48.51227</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.5122717573928,-20.4851280192757,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 10</SimpleData>
+		<SimpleData name="Rodovia_1">SP 066</SimpleData>
+		<SimpleData name="Denominaca">Henrique Eroles</SimpleData>
+		<SimpleData name="KM">067</SimpleData>
+		<SimpleData name="Trecho">Guararema/Mogi das Cruzes</SimpleData>
+		<SimpleData name="Municipi_1">Mogi das Cruzes</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-23.46244</SimpleData>
+		<SimpleData name="long">-46.07781</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.0778060385237,-23.4624438350285,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 008</SimpleData>
+		<SimpleData name="Denominaca">Pedro Astenori Marigliani (Capitão Bardoíno)</SimpleData>
+		<SimpleData name="KM">100+140</SimpleData>
+		<SimpleData name="Trecho">Socorro/Bragança Paulista</SimpleData>
+		<SimpleData name="Municipi_1">Bragança Paulista</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.88294</SimpleData>
+		<SimpleData name="long">-46.53759</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.5375926212824,-22.8829437177911,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 008</SimpleData>
+		<SimpleData name="Denominaca">Pedro Astenori Marigliani (Capitão Bardoíno)</SimpleData>
+		<SimpleData name="KM">102+350</SimpleData>
+		<SimpleData name="Trecho">Bragança Paulista/Socorro</SimpleData>
+		<SimpleData name="Municipi_1">Bragança Paulista</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.86383</SimpleData>
+		<SimpleData name="long">-46.53732</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.5373227695903,-22.8638306738744,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 354</SimpleData>
+		<SimpleData name="Denominaca">Edgard Máximo Zambotto</SimpleData>
+		<SimpleData name="KM">79+200</SimpleData>
+		<SimpleData name="Trecho">Jarinu/Campo Limpo Paulista</SimpleData>
+		<SimpleData name="Municipi_1">Atibaia</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.05722</SimpleData>
+		<SimpleData name="long">-46.68019</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.68019234145,-23.0572197440226,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 063</SimpleData>
+		<SimpleData name="Denominaca">Luciano Consoline</SimpleData>
+		<SimpleData name="KM">30+700</SimpleData>
+		<SimpleData name="Trecho">Itatiba/Bragança Paulista</SimpleData>
+		<SimpleData name="Municipi_1">Itatiba</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.98134</SimpleData>
+		<SimpleData name="long">-46.74602</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7460207460269,-22.9813434045217,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 095</SimpleData>
+		<SimpleData name="Denominaca">João Beira</SimpleData>
+		<SimpleData name="KM">62+880</SimpleData>
+		<SimpleData name="Trecho">Pedreira/Jaguariuna</SimpleData>
+		<SimpleData name="Municipi_1">Pedreira</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.73126</SimpleData>
+		<SimpleData name="long">-46.93238</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.9323763158238,-22.7312588189535,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 133</SimpleData>
+		<SimpleData name="Denominaca">Deputado João Herrmann Neto</SimpleData>
+		<SimpleData name="KM">13+800</SimpleData>
+		<SimpleData name="Trecho">Cosmópolis/Limeira</SimpleData>
+		<SimpleData name="Municipi_1">Cosmópolis</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.62865</SimpleData>
+		<SimpleData name="long">-47.21051</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.2105057745938,-22.6286515608901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 147</SimpleData>
+		<SimpleData name="Denominaca">Monsenhor Clodoaldo de Paiva</SimpleData>
+		<SimpleData name="KM">29+000</SimpleData>
+		<SimpleData name="Trecho">Itapira/Lindóia
+</SimpleData>
+		<SimpleData name="Municipi_1">Itapira</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.47013</SimpleData>
+		<SimpleData name="long">-46.70045</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7004524401111,-22.4701266098756,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 324</SimpleData>
+		<SimpleData name="Denominaca">Miguel Melhado Campos</SimpleData>
+		<SimpleData name="KM">84+350</SimpleData>
+		<SimpleData name="Trecho">Indaiatuba/Vinhedo</SimpleData>
+		<SimpleData name="Municipi_1">Campinas</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.05120</SimpleData>
+		<SimpleData name="long">-47.07491</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.0749080689754,-23.0511952815737,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 360</SimpleData>
+		<SimpleData name="Denominaca">Constancio Cintra, Engenheiro</SimpleData>
+		<SimpleData name="KM">114+150</SimpleData>
+		<SimpleData name="Trecho">Morungaba/Amparo</SimpleData>
+		<SimpleData name="Municipi_1">Amparo</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.80866</SimpleData>
+		<SimpleData name="long">-46.75560</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7556029378792,-22.8086598045204,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 01</SimpleData>
+		<SimpleData name="Rodovia_1">SP 360</SimpleData>
+		<SimpleData name="Denominaca">Engenheiro Constâncio Cintra</SimpleData>
+		<SimpleData name="KM">123+150</SimpleData>
+		<SimpleData name="Trecho">Amparo/Morungaba</SimpleData>
+		<SimpleData name="Municipi_1">Amparo</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.75444</SimpleData>
+		<SimpleData name="long">-46.76117</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7611711556557,-22.7544443067902,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 079</SimpleData>
+		<SimpleData name="Denominaca">Raimundo Antunes Soares</SimpleData>
+		<SimpleData name="KM">100+200</SimpleData>
+		<SimpleData name="Trecho">Piedade/Sorocaba</SimpleData>
+		<SimpleData name="Municipi_1">Votorantim</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.58622</SimpleData>
+		<SimpleData name="long">-47.48373</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.4837288730295,-23.5862162514063,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 079</SimpleData>
+		<SimpleData name="Denominaca">Raimundo Antunes Soares</SimpleData>
+		<SimpleData name="KM">112+000</SimpleData>
+		<SimpleData name="Trecho">Sorocaba/Piedade</SimpleData>
+		<SimpleData name="Municipi_1">Piedade</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.67125</SimpleData>
+		<SimpleData name="long">-47.43931</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.4393054003071,-23.6712493975407,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 097</SimpleData>
+		<SimpleData name="Denominaca">Doutor Antonio Pires de Almeida</SimpleData>
+		<SimpleData name="KM">19+000</SimpleData>
+		<SimpleData name="Trecho">Sorocaba/Porto Feliz</SimpleData>
+		<SimpleData name="Municipi_1">Porto Feliz</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.29107</SimpleData>
+		<SimpleData name="long">-47.52964</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.5296410899761,-23.2910657066766,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 129</SimpleData>
+		<SimpleData name="Denominaca">Gladys Bernardes Minhoto</SimpleData>
+		<SimpleData name="KM">63+200</SimpleData>
+		<SimpleData name="Trecho">Tatui/Itapetininga</SimpleData>
+		<SimpleData name="Municipi_1">Itapetininga</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.46019</SimpleData>
+		<SimpleData name="long">-48.05074</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.0507375587826,-23.4601885649901,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 129</SimpleData>
+		<SimpleData name="Denominaca">Gladys Bernardes Minhoto</SimpleData>
+		<SimpleData name="KM">65+500</SimpleData>
+		<SimpleData name="Trecho">Itapetininga/Tatuí</SimpleData>
+		<SimpleData name="Municipi_1">Itapetininga</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.47983</SimpleData>
+		<SimpleData name="long">-48.05166</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.0516602929218,-23.4798250473826,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 250</SimpleData>
+		<SimpleData name="Denominaca">Bunjiro Nakao</SimpleData>
+		<SimpleData name="KM">72+624</SimpleData>
+		<SimpleData name="Trecho">Piedade/Ibiúna</SimpleData>
+		<SimpleData name="Municipi_1">Ibiúna
+</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.66781</SimpleData>
+		<SimpleData name="long">-47.22887</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.2288741528619,-23.6678137160618,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 250</SimpleData>
+		<SimpleData name="Denominaca">Nestor Fogaça</SimpleData>
+		<SimpleData name="KM">159+846</SimpleData>
+		<SimpleData name="Trecho">São Miguel Arcanjo/Pilar do Sul</SimpleData>
+		<SimpleData name="Municipi_1">São Miguel Arcanjo</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.86093</SimpleData>
+		<SimpleData name="long">-47.84921</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.8492063658229,-23.8609289183859,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 02</SimpleData>
+		<SimpleData name="Rodovia_1">SP 264</SimpleData>
+		<SimpleData name="Denominaca">João Leme Dos Santos</SimpleData>
+		<SimpleData name="KM">111+805</SimpleData>
+		<SimpleData name="Trecho">Salto Pirapora/Sorocaba</SimpleData>
+		<SimpleData name="Municipi_1">Salto de Pirapora</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.59068</SimpleData>
+		<SimpleData name="long">-47.53717</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.5371730286067,-23.5906822786434,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 191</SimpleData>
+		<SimpleData name="Denominaca">Geraldo de Barros</SimpleData>
+		<SimpleData name="KM">168+480</SimpleData>
+		<SimpleData name="Trecho">Botucatu/Santa Maria da Serra</SimpleData>
+		<SimpleData name="Municipi_1">Botucatu</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.71424</SimpleData>
+		<SimpleData name="long">-48.32556</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.3255605038914,-22.7142404020924,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 191</SimpleData>
+		<SimpleData name="Denominaca">Geraldo de Barros</SimpleData>
+		<SimpleData name="KM">186+350</SimpleData>
+		<SimpleData name="Trecho">Botucatu/São Manuel</SimpleData>
+		<SimpleData name="Municipi_1">São Manuel</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.75328</SimpleData>
+		<SimpleData name="long">-48.48531</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.4853098832903,-22.7532847025289,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 304</SimpleData>
+		<SimpleData name="Denominaca">Leonidas Pacheco Ferreira, Deputado</SimpleData>
+		<SimpleData name="KM">324+500</SimpleData>
+		<SimpleData name="Trecho">Bariri/Jau</SimpleData>
+		<SimpleData name="Municipi_1">Bariri</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.11292</SimpleData>
+		<SimpleData name="long">-48.69101</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.6910099557664,-22.1129152368458,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 304</SimpleData>
+		<SimpleData name="Denominaca">Leonidas Pacheco Ferreira, Deputado</SimpleData>
+		<SimpleData name="KM">324+000</SimpleData>
+		<SimpleData name="Trecho">Jaú/Bariri</SimpleData>
+		<SimpleData name="Municipi_1">Bariri</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.11618</SimpleData>
+		<SimpleData name="long">-48.68827</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.6882709545545,-22.1161800360645,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 304</SimpleData>
+		<SimpleData name="Denominaca">Leonidas Pacheco Ferreira, Deputado</SimpleData>
+		<SimpleData name="KM">305+300</SimpleData>
+		<SimpleData name="Trecho">Itaju/Bariri</SimpleData>
+		<SimpleData name="Municipi_1">Bariri</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.24556</SimpleData>
+		<SimpleData name="long">-48.57458</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.5745846987592,-22.2455619053968,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 321</SimpleData>
+		<SimpleData name="Denominaca">Cezario José de Castilho</SimpleData>
+		<SimpleData name="KM">369+600</SimpleData>
+		<SimpleData name="Trecho">Iacanga/Bauru</SimpleData>
+		<SimpleData name="Municipi_1">Arealva</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.07754</SimpleData>
+		<SimpleData name="long">-49.02453</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.0245310564525,-22.0775399084181,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 03</SimpleData>
+		<SimpleData name="Rodovia_1">SP 321</SimpleData>
+		<SimpleData name="Denominaca">Cezario José de Castilho</SimpleData>
+		<SimpleData name="KM">369+600</SimpleData>
+		<SimpleData name="Trecho">Bauru/Iacanga</SimpleData>
+		<SimpleData name="Municipi_1">Arealva</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.07039</SimpleData>
+		<SimpleData name="long">-49.02355</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.0235494045787,-22.0703891506772,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 04</SimpleData>
+		<SimpleData name="Rodovia_1">SP 253</SimpleData>
+		<SimpleData name="Denominaca">Cunha Bueno, Deputado</SimpleData>
+		<SimpleData name="KM">207+000</SimpleData>
+		<SimpleData name="Trecho">Jaboticabal/Pradopolis</SimpleData>
+		<SimpleData name="Municipi_1">Guariba</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.31419</SimpleData>
+		<SimpleData name="long">-48.16348</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.1634814192387,-21.3141897105959,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 04</SimpleData>
+		<SimpleData name="Rodovia_1">SP 253</SimpleData>
+		<SimpleData name="Denominaca">Cunha Bueno, Deputado</SimpleData>
+		<SimpleData name="KM">209+000</SimpleData>
+		<SimpleData name="Trecho">Pradopolis/Jaboticabal</SimpleData>
+		<SimpleData name="Municipi_1">Jaboticabal</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.31188</SimpleData>
+		<SimpleData name="long">-48.18431</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.1843115660528,-21.3118830709653,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 04</SimpleData>
+		<SimpleData name="Rodovia_1">SP 304</SimpleData>
+		<SimpleData name="Denominaca">Leonidas Pacheco Ferreira, Deputado</SimpleData>
+		<SimpleData name="KM">354+000</SimpleData>
+		<SimpleData name="Trecho">Itaju/Ibitinga</SimpleData>
+		<SimpleData name="Municipi_1">Ibitinga</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.87426</SimpleData>
+		<SimpleData name="long">-48.81971</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.8197103472173,-21.8742639916098,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 04</SimpleData>
+		<SimpleData name="Rodovia_1">SP 331</SimpleData>
+		<SimpleData name="Denominaca">Victor Maida, Deputado</SimpleData>
+		<SimpleData name="KM">12+000</SimpleData>
+		<SimpleData name="Trecho">Gavião Peixoto/Araraquara</SimpleData>
+		<SimpleData name="Municipi_1">Gavião Peixoto</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.73613</SimpleData>
+		<SimpleData name="long">-48.40928</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.409279697574,-21.736129675527,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 05</SimpleData>
+		<SimpleData name="Rodovia_1">SP 139</SimpleData>
+		<SimpleData name="Denominaca">Empei Hiraide</SimpleData>
+		<SimpleData name="KM">10+200</SimpleData>
+		<SimpleData name="Trecho">Sete Barras/Registro</SimpleData>
+		<SimpleData name="Municipi_1">Sete Barras</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-24.42192</SimpleData>
+		<SimpleData name="long">-47.87216</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.8721635957794,-24.4219205411207,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 05</SimpleData>
+		<SimpleData name="Rodovia_1">SP 226</SimpleData>
+		<SimpleData name="Denominaca">s/d</SimpleData>
+		<SimpleData name="KM">1+300</SimpleData>
+		<SimpleData name="Trecho">Registro/Pariquera-Açu</SimpleData>
+		<SimpleData name="Municipi_1">Paruquera-Açú</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-24.65505</SimpleData>
+		<SimpleData name="long">-47.91381</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.9138118817466,-24.6550506994853,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 050</SimpleData>
+		<SimpleData name="Denominaca">Monteiro Lobato</SimpleData>
+		<SimpleData name="KM">100+500</SimpleData>
+		<SimpleData name="Trecho">Monteiro Lobato/São José dos Campos</SimpleData>
+		<SimpleData name="Municipi_1">São José dos Campos</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.11625</SimpleData>
+		<SimpleData name="long">-45.91333</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.9133269934346,-23.1162452189557,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 052</SimpleData>
+		<SimpleData name="Denominaca">Doutor Avelino Junior</SimpleData>
+		<SimpleData name="KM">222+000</SimpleData>
+		<SimpleData name="Trecho">Cruzeiro/Sul de Minas Gerais</SimpleData>
+		<SimpleData name="Municipi_1">Cruzeiro</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.56191</SimpleData>
+		<SimpleData name="long">-45.00769</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.0076923654414,-22.5619139740674,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 123</SimpleData>
+		<SimpleData name="Denominaca">Floriano Rodrigues Pinheiro</SimpleData>
+		<SimpleData name="KM">25+991</SimpleData>
+		<SimpleData name="Trecho">Taubaté/Campos do Jordão</SimpleData>
+		<SimpleData name="Municipi_1">Pindamonhangaba</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.86356</SimpleData>
+		<SimpleData name="long">-45.60270</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.6027015745322,-22.8635561535603,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 123</SimpleData>
+		<SimpleData name="Denominaca">Floriano Rodrigues Pinheiro</SimpleData>
+		<SimpleData name="KM">7+800</SimpleData>
+		<SimpleData name="Trecho">BR 116/Tremembé</SimpleData>
+		<SimpleData name="Municipi_1">Taubaté</SimpleData>
+		<SimpleData name="Edital">12024</SimpleData>
+		<SimpleData name="lat">-22.99222</SimpleData>
+		<SimpleData name="long">-45.64519</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.6451853086451,-22.9922200093654,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 06</SimpleData>
+		<SimpleData name="Rodovia_1">SP 171</SimpleData>
+		<SimpleData name="Denominaca">Paulo Virgilio</SimpleData>
+		<SimpleData name="KM">2+800</SimpleData>
+		<SimpleData name="Trecho">Cunha/BR 116</SimpleData>
+		<SimpleData name="Municipi_1">Guaratinguetá</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.84096</SimpleData>
+		<SimpleData name="long">-45.18092</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-45.1809164636522,-22.8409551766405,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 08</SimpleData>
+		<SimpleData name="Rodovia_1">SP 291</SimpleData>
+		<SimpleData name="Denominaca">Mario Donega</SimpleData>
+		<SimpleData name="KM">23+975</SimpleData>
+		<SimpleData name="Trecho">Dumont/Pradópolis</SimpleData>
+		<SimpleData name="Municipi_1">Pradópolis</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.33115</SimpleData>
+		<SimpleData name="long">-48.05268</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.0526848057426,-21.3311510383495,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 08</SimpleData>
+		<SimpleData name="Rodovia_1">SP 333</SimpleData>
+		<SimpleData name="Denominaca">Abrão Assed</SimpleData>
+		<SimpleData name="KM">16+940</SimpleData>
+		<SimpleData name="Trecho">Cajuru/Serrana</SimpleData>
+		<SimpleData name="Municipi_1">Santa Cruz da Esperança</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.28908</SimpleData>
+		<SimpleData name="long">-47.44887</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.4488662823823,-21.2890775471729,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 08</SimpleData>
+		<SimpleData name="Rodovia_1">SP 333</SimpleData>
+		<SimpleData name="Denominaca">Abrão Assed</SimpleData>
+		<SimpleData name="KM">48+100</SimpleData>
+		<SimpleData name="Trecho">Ribeirão Preto/Serrana</SimpleData>
+		<SimpleData name="Municipi_1">Ribeirão Preto</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.20782</SimpleData>
+		<SimpleData name="long">-47.69172</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.6917245045333,-21.2078196595409,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 08</SimpleData>
+		<SimpleData name="Rodovia_1">SP 351</SimpleData>
+		<SimpleData name="Denominaca">Altino Arantes</SimpleData>
+		<SimpleData name="KM">18+900</SimpleData>
+		<SimpleData name="Trecho">Santo Antonio Alegria/Altinópolis</SimpleData>
+		<SimpleData name="Municipi_1">Altinópolis</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.01614</SimpleData>
+		<SimpleData name="long">-47.32693</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.3269342937108,-21.0161380948995,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 304</SimpleData>
+		<SimpleData name="Denominaca">s/d</SimpleData>
+		<SimpleData name="KM">410+000</SimpleData>
+		<SimpleData name="Trecho">Ibitinga/Novo Horizonte</SimpleData>
+		<SimpleData name="Municipi_1">Novo Horizonte</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.52799</SimpleData>
+		<SimpleData name="long">-49.18149</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.1814901686717,-21.5279861151382,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 310</SimpleData>
+		<SimpleData name="Denominaca">Rodovia Feliciano Sales da Cunha</SimpleData>
+		<SimpleData name="KM">495+700</SimpleData>
+		<SimpleData name="Trecho">Nhandeara/Monte Aprazível</SimpleData>
+		<SimpleData name="Municipi_1">Monte Aprazível</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.70396</SimpleData>
+		<SimpleData name="long">-49.91279</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.9127927038966,-20.703956699653,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 320</SimpleData>
+		<SimpleData name="Denominaca">Euclides da Cunha</SimpleData>
+		<SimpleData name="KM">460+700</SimpleData>
+		<SimpleData name="Trecho">Bálsamo/Votuporanga</SimpleData>
+		<SimpleData name="Municipi_1">Bálsamo</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.75193</SimpleData>
+		<SimpleData name="long">-49.56277</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.5627689940246,-20.7519319119152,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 379</SimpleData>
+		<SimpleData name="Denominaca">Roberto Mario Perosa</SimpleData>
+		<SimpleData name="KM">14+000</SimpleData>
+		<SimpleData name="Trecho">Ibirá/Urupês</SimpleData>
+		<SimpleData name="Municipi_1">Ibirá</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.10316</SimpleData>
+		<SimpleData name="long">-49.26360</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.2635954017015,-21.1031648086832,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 379</SimpleData>
+		<SimpleData name="Denominaca">Roberto Mario Perosa</SimpleData>
+		<SimpleData name="KM">14+000</SimpleData>
+		<SimpleData name="Trecho">Urupês/Ibirá</SimpleData>
+		<SimpleData name="Municipi_1">Ibirá</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.10338</SimpleData>
+		<SimpleData name="long">-49.26352</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.2635199797722,-21.1033824511159,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 09</SimpleData>
+		<SimpleData name="Rodovia_1">SP 425</SimpleData>
+		<SimpleData name="Denominaca">Assis Chateaubriand</SimpleData>
+		<SimpleData name="KM">162+200</SimpleData>
+		<SimpleData name="Trecho">São José do Rio Preto/Olímpia</SimpleData>
+		<SimpleData name="Municipi_1">Guarapiaçu</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.75344</SimpleData>
+		<SimpleData name="long">-49.14706</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.1470558940272,-20.7534446713782,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 10</SimpleData>
+		<SimpleData name="Rodovia_1">SP 023</SimpleData>
+		<SimpleData name="Denominaca">Prefeito Luiz Salomão Chamma</SimpleData>
+		<SimpleData name="KM">52+500</SimpleData>
+		<SimpleData name="Trecho">Franco da Rocha/Mairiporã</SimpleData>
+		<SimpleData name="Municipi_1">Mairiporã</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.32937</SimpleData>
+		<SimpleData name="long">-46.62775</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.6277509937357,-23.3293683297699,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 10</SimpleData>
+		<SimpleData name="Rodovia_1">SP 098</SimpleData>
+		<SimpleData name="Denominaca">Dom Paulo Rolim Loureiro</SimpleData>
+		<SimpleData name="KM">77+150</SimpleData>
+		<SimpleData name="Trecho">Mogi das Cruzes/Bertioga</SimpleData>
+		<SimpleData name="Municipi_1">Mogi das Cruzes</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.69511</SimpleData>
+		<SimpleData name="long">-46.09190</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.091897241008,-23.6951123980653,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 10</SimpleData>
+		<SimpleData name="Rodovia_1">SP 332</SimpleData>
+		<SimpleData name="Denominaca">Presidente Tancredo de Almeida Neves</SimpleData>
+		<SimpleData name="KM">44+500</SimpleData>
+		<SimpleData name="Trecho">Franco da Rocha/Jundiaí</SimpleData>
+		<SimpleData name="Municipi_1">Franco da Rocha</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.29607</SimpleData>
+		<SimpleData name="long">-46.77723</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7772289360294,-23.2960652179481,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 10</SimpleData>
+		<SimpleData name="Rodovia_1">SP 332</SimpleData>
+		<SimpleData name="Denominaca">Presidente Tancredo de Almeida Neves</SimpleData>
+		<SimpleData name="KM">44+500</SimpleData>
+		<SimpleData name="Trecho">Jundiaí/Franco da Rocha</SimpleData>
+		<SimpleData name="Municipi_1">Franco da Rocha</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-23.29637</SimpleData>
+		<SimpleData name="long">-46.77730</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7772998594693,-23.2963700981593,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 11</SimpleData>
+		<SimpleData name="Rodovia_1">SP 310</SimpleData>
+		<SimpleData name="Denominaca">Rodovia Feliciano Salles Cunha</SimpleData>
+		<SimpleData name="KM">540+000</SimpleData>
+		<SimpleData name="Trecho">Magda/General Salgado</SimpleData>
+		<SimpleData name="Municipi_1">General Salgado</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.64004</SimpleData>
+		<SimpleData name="long">-50.31551</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.3155125146265,-20.6400448308838,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 11</SimpleData>
+		<SimpleData name="Rodovia_1">SP 425</SimpleData>
+		<SimpleData name="Denominaca">Assis Chateaubriand</SimpleData>
+		<SimpleData name="KM">251+000</SimpleData>
+		<SimpleData name="Trecho">Barbosa/ José Bonifácio</SimpleData>
+		<SimpleData name="Municipi_1">José Bonifácio</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.14994</SimpleData>
+		<SimpleData name="long">-49.88639</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-49.8863891775482,-21.1499409028539,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 11</SimpleData>
+		<SimpleData name="Rodovia_1">SP 463</SimpleData>
+		<SimpleData name="Denominaca">Dr. Elyeser Montenegro Magalhães</SimpleData>
+		<SimpleData name="KM">63+250</SimpleData>
+		<SimpleData name="Trecho">Santo Antonio do Arancanguá/Araçatuba</SimpleData>
+		<SimpleData name="Municipi_1">Santo Antônio do Aracangua</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.02538</SimpleData>
+		<SimpleData name="long">-50.45857</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-50.4585745191101,-21.0253821363286,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 12</SimpleData>
+		<SimpleData name="Rodovia_1">SP 421</SimpleData>
+		<SimpleData name="Denominaca">Rodolfo Ribeiro de Castro</SimpleData>
+		<SimpleData name="KM">148+015</SimpleData>
+		<SimpleData name="Trecho">Nantes/Taciba</SimpleData>
+		<SimpleData name="Municipi_1">Taciba</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.64672</SimpleData>
+		<SimpleData name="long">-51.37906</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.3790574474696,-22.6467193448158,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 12</SimpleData>
+		<SimpleData name="Rodovia_1">SP 563</SimpleData>
+		<SimpleData name="Denominaca">Euclides de Oliveira Figueiredo</SimpleData>
+		<SimpleData name="KM">121+055</SimpleData>
+		<SimpleData name="Trecho">Ouro Verde/Presidente Venceslau</SimpleData>
+		<SimpleData name="Municipi_1">Dracena</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.54517</SimpleData>
+		<SimpleData name="long">-51.66128</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-51.6612776348041,-21.545172627757,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 13</SimpleData>
+		<SimpleData name="Rodovia_1">SP 151</SimpleData>
+		<SimpleData name="Denominaca">João Mendes da Silva Junior, Doutor</SimpleData>
+		<SimpleData name="KM">5+500</SimpleData>
+		<SimpleData name="Trecho">Limeira/Iracemópolis</SimpleData>
+		<SimpleData name="Municipi_1">Iracemápolis</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.57638</SimpleData>
+		<SimpleData name="long">-47.49540</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.4953987436364,-22.5763779093381,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 13</SimpleData>
+		<SimpleData name="Rodovia_1">SP 304</SimpleData>
+		<SimpleData name="Denominaca">Luiz de Queiroz</SimpleData>
+		<SimpleData name="KM">154+000</SimpleData>
+		<SimpleData name="Trecho">Piracicaba/Santa Bárbara D' Oeste</SimpleData>
+		<SimpleData name="Municipi_1">Piracicaba</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-22.72550</SimpleData>
+		<SimpleData name="long">-47.56902</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-47.5690233538039,-22.7254976639845,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 13</SimpleData>
+		<SimpleData name="Rodovia_1">SP 350</SimpleData>
+		<SimpleData name="Denominaca">Eduardo Vicente Nasser, Deputado</SimpleData>
+		<SimpleData name="KM">294+000</SimpleData>
+		<SimpleData name="Trecho">Guaxupé (MG)/Tapirativa</SimpleData>
+		<SimpleData name="Municipi_1">Tapiratiba</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-21.40580</SimpleData>
+		<SimpleData name="long">-46.73759</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-46.7375914075258,-21.4057956696578,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 322</SimpleData>
+		<SimpleData name="Denominaca">Armando de Salles Oliveira</SimpleData>
+		<SimpleData name="KM">407+855</SimpleData>
+		<SimpleData name="Trecho">Bebedouro/Monte Azul Paulista</SimpleData>
+		<SimpleData name="Municipi_1">Monte Azul Paulista</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.90023</SimpleData>
+		<SimpleData name="long">-48.60307</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.6030673659898,-20.9002262225246,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 322</SimpleData>
+		<SimpleData name="Denominaca">Armando de Salles Oliveira</SimpleData>
+		<SimpleData name="KM">407+855</SimpleData>
+		<SimpleData name="Trecho">Monte Azul Paulista/Bebedouro</SimpleData>
+		<SimpleData name="Municipi_1">Monte Azul Paulista</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.90029</SimpleData>
+		<SimpleData name="long">-48.60359</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.6035859645819,-20.9002928975594,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 322</SimpleData>
+		<SimpleData name="Denominaca">Armando de Salles Oliveira</SimpleData>
+		<SimpleData name="KM">450+450</SimpleData>
+		<SimpleData name="Trecho">Guaraci/Olimpia</SimpleData>
+		<SimpleData name="Municipi_1">Olímpia</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.67486</SimpleData>
+		<SimpleData name="long">-48.91309</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.9130912406546,-20.6748557503633,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 373</SimpleData>
+		<SimpleData name="Denominaca">Jose Marcelino de Almeida (Juca de Almeida)</SimpleData>
+		<SimpleData name="KM">185+000</SimpleData>
+		<SimpleData name="Trecho">Severínia/Olimpia</SimpleData>
+		<SimpleData name="Municipi_1">Severínia</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.79259</SimpleData>
+		<SimpleData name="long">-48.76431</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.7643140031082,-20.7925876339739,0</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#balanas_der">
+		<SimpleData name="CodRegiona">DR 14</SimpleData>
+		<SimpleData name="Rodovia_1">SP 413</SimpleData>
+		<SimpleData name="Denominaca">Norival Pereira Mattos</SimpleData>
+		<SimpleData name="KM">24+435</SimpleData>
+		<SimpleData name="Trecho">MG/Miguelópolis</SimpleData>
+		<SimpleData name="Municipi_1">Miguelópolis</SimpleData>
+		<SimpleData name="Edital">42018</SimpleData>
+		<SimpleData name="lat">-20.04914</SimpleData>
+		<SimpleData name="long">-48.23286</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-48.2328632276524,-20.0491375673834,0</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>
