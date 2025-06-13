@@ -1,0 +1,1110 @@
+---
+layout: default
+title: "Publicar Dados"
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Dados - Dicionário DER-SP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .upload-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .upload-area {
+            border: 3px dashed var(--secondary-color);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            background: rgba(59, 130, 246, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .upload-area.dragover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-color);
+        }
+
+        .upload-icon {
+            font-size: 4rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .step.active .step-circle {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .step.completed .step-circle {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .preview-table {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .field-row {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .auto-filled {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .manual-required {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .alert-success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success-color);
+            color: #059669;
+        }
+
+        .alert-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid var(--accent-color);
+            color: #d97706;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #e2e8f0;
+            border-top: 5px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .upload-section, .form-section {
+                padding: 1rem;
+            }
+            
+            .upload-area {
+                padding: 2rem 1rem;
+            }
+            
+            .step-indicator {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .step::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-database me-2"></i>DER-SP Data</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-search me-1"></i>Consultar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-upload me-1"></i>Publicar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html"><i class="fas fa-info-circle me-1"></i>Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1><i class="fas fa-upload me-3"></i>Publicar Dados</h1>
+            <p class="lead">Faça upload de seus dados e gere automaticamente o dicionário de metadados</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step active" id="step1">
+                <div class="step-circle">1</div>
+                <div>Upload</div>
+            </div>
+            <div class="step" id="step2">
+                <div class="step-circle">2</div>
+                <div>Análise</div>
+            </div>
+            <div class="step" id="step3">
+                <div class="step-circle">3</div>
+                <div>Edição</div>
+            </div>
+            <div class="step" id="step4">
+                <div class="step-circle">4</div>
+                <div>Publicação</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Upload -->
+        <div class="upload-section" id="uploadSection">
+            <h3><i class="fas fa-cloud-upload-alt me-2"></i>Passo 1: Upload do Arquivo</h3>
+            <p class="text-muted mb-4">Faça upload de um arquivo CSV, XLSX ou JSON para análise automática</p>
+            
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h4>Arraste seus arquivos aqui</h4>
+                <p class="text-muted">ou clique para selecionar</p>
+                <input type="file" id="fileInput" style="display: none;" accept=".csv,.xlsx,.xls,.json" multiple>
+                <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                    <i class="fas fa-folder-open me-2"></i>Selecionar Arquivos
+                </button>
+            </div>
+            
+            <div class="mt-3" id="fileList"></div>
+        </div>
+
+        <!-- Step 2: Analysis -->
+        <div class="form-section" id="analysisSection" style="display: none;">
+            <h3><i class="fas fa-chart-line me-2"></i>Passo 2: Análise Automática</h3>
+            <p class="text-muted mb-4">Análise dos dados e extração automática de metadados</p>
+            
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                Analisando estrutura dos dados e inferindo tipos...
+            </div>
+            
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" id="analysisProgress" 
+                     style="width: 0%" role="progressbar"></div>
+            </div>
+            
+            <div id="analysisResults"></div>
+        </div>
+
+        <!-- Step 3: Editing -->
+        <div class="form-section" id="editingSection" style="display: none;">
+            <h3><i class="fas fa-edit me-2"></i>Passo 3: Edição do Dicionário</h3>
+            <p class="text-muted mb-4">Complete e ajuste as informações extraídas automaticamente</p>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <span id="autoFilledCount">0</span> campos preenchidos automaticamente
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <span id="manualRequiredCount">0</span> campos requerem preenchimento manual
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Global Metadata -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5><i class="fas fa-globe me-2"></i>Metadados Globais do Dataset</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nome do Arquivo</label>
+                            <input type="text" class="form-control" id="globalFileName" readonly>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Tema *</label>
+                            <select class="form-select" id="globalTheme" required>
+                                <option value="">Selecione um tema</option>
+                                <option value="rodovias">Rodovias</option>
+                                <option value="usuarios">Usuários</option>
+                                <option value="balancas">Balanças</option>
+                                <option value="trafego">Tráfego</option>
+                                <option value="manutencao">Manutenção</option>
+                                <option value="fiscalizacao">Fiscalização</option>
+                                <option value="financeiro">Financeiro</option>
+                                <option value="obras">Obras</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Responsável *</label>
+                            <input type="text" class="form-control" id="globalResponsible" placeholder="Ex: DER-SP / TI" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Licença *</label>
+                            <select class="form-select" id="globalLicense" required>
+                                <option value="">Selecione uma licença</option>
+                                <option value="CC-BY">CC-BY</option>
+                                <option value="CC-BY-SA">CC-BY-SA</option>
+                                <option value="CC0">CC0</option>
+                                <option value="MIT">MIT</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Frequência de Atualização</label>
+                            <select class="form-select" id="globalFrequency">
+                                <option value="">Selecione a frequência</option>
+                                <option value="diaria">Diária</option>
+                                <option value="semanal">Semanal</option>
+                                <option value="mensal">Mensal</option>
+                                <option value="trimestral">Trimestral</option>
+                                <option value="semestral">Semestral</option>
+                                <option value="anual">Anual</option>
+                                <option value="eventual">Eventual</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Cobertura Geográfica</label>
+                            <input type="text" class="form-control" id="globalGeoCoverage" placeholder="Ex: SP, Brasil, Específica">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Descrição do Dataset *</label>
+                            <textarea class="form-control" id="globalDescription" rows="3" 
+                                      placeholder="Descreva o propósito e conteúdo do dataset" required></textarea>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label class="form-label">Observações Gerais</label>
+                            <textarea class="form-control" id="globalObservations" rows="2" 
+                                      placeholder="Informações adicionais sobre o dataset"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fields Editor -->
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5><i class="fas fa-table me-2"></i>Campos do Dataset</h5>
+                    <button class="btn btn-outline-primary btn-sm" onclick="toggleAllFields()">
+                        <i class="fas fa-expand-alt me-1"></i>Expandir Todos
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div id="fieldsEditor"></div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn btn-primary me-2" onclick="goToStep(2)">
+                    <i class="fas fa-arrow-left me-2"></i>Voltar
+                </button>
+                <button class="btn btn-success" onclick="goToStep(4)">
+                    <i class="fas fa-arrow-right me-2"></i>Finalizar
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 4: Publication -->
+        <div class="form-section" id="publicationSection" style="display: none;">
+            <h3><i class="fas fa-rocket me-2"></i>Passo 4: Publicação</h3>
+            <p class="text-muted mb-4">Revise e publique o dicionário de dados</p>
+            
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i>
+                O dicionário será adicionado ao repositório e estará disponível na página principal.
+            </div>
+            
+            <div class="preview-section mb-4">
+                <h5>Preview do Dicionário</h5>
+                <div class="preview-table">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Campo</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Obrigatório</th>
+                            </tr>
+                        </thead>
+                        <tbody id="previewTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn btn-primary me-2" onclick="goToStep(3)">
+                    <i class="fas fa-arrow-left me-2"></i>Voltar
+                </button>
+                <button class="btn btn-success" onclick="publishDictionary()">
+                    <i class="fas fa-check me-2"></i>Publicar Dicionário
+                </button>
+            </div>
+            
+            <div class="mt-4" id="publicationResult"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Papa/5.4.1/papaparse.min.js"></script>
+
+    <script>
+        let uploadedFiles = [];
+        let analyzedData = {};
+        let dictionaryData = [];
+        let currentStep = 1;
+
+        // File upload handlers
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+        
+        const uploadArea = document.getElementById('uploadArea');
+        uploadArea.addEventListener('dragover', handleDragOver);
+        uploadArea.addEventListener('drop', handleDrop);
+        uploadArea.addEventListener('click', () => document.getElementById('fileInput').click());
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = Array.from(e.dataTransfer.files);
+            processFiles(files);
+        }
+
+        function handleFileSelect(e) {
+            const files = Array.from(e.target.files);
+            processFiles(files);
+        }
+
+        function processFiles(files) {
+            uploadedFiles = files.filter(file => 
+                file.type.includes('csv') || 
+                file.type.includes('spreadsheet') || 
+                file.type.includes('json') ||
+                file.name.endsWith('.csv') ||
+                file.name.endsWith('.xlsx') ||
+                file.name.endsWith('.xls') ||
+                file.name.endsWith('.json')
+            );
+
+            if (uploadedFiles.length === 0) {
+                showAlert('error', 'Nenhum arquivo válido foi selecionado. Suporte: CSV, XLSX, JSON');
+                return;
+            }
+
+            displayFileList();
+            setTimeout(() => goToStep(2), 1000);
+        }
+
+        function displayFileList() {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '<h6 class="mt-3">Arquivos selecionados:</h6>';
+            
+            uploadedFiles.forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'alert alert-success d-flex justify-content-between align-items-center';
+                fileItem.innerHTML = `
+                    <div>
+                        <i class="fas fa-file me-2"></i>
+                        <strong>${file.name}</strong>
+                        <span class="text-muted ms-2">(${(file.size / 1024).toFixed(1)} KB)</span>
+                    </div>
+                    <button class="btn btn-outline-danger btn-sm" onclick="removeFile(${index})">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+                fileList.appendChild(fileItem);
+            });
+        }
+
+        function removeFile(index) {
+            uploadedFiles.splice(index, 1);
+            if (uploadedFiles.length === 0) {
+                document.getElementById('fileList').innerHTML = '';
+                goToStep(1);
+            } else {
+                displayFileList();
+            }
+        }
+
+        async function analyzeFiles() {
+            showLoading(true);
+            const progressBar = document.getElementById('analysisProgress');
+            let progress = 0;
+            
+            for (let i = 0; i < uploadedFiles.length; i++) {
+                const file = uploadedFiles[i];
+                progress = ((i + 1) / uploadedFiles.length) * 100;
+                progressBar.style.width = progress + '%';
+                
+                try {
+                    const data = await readFile(file);
+                    analyzedData[file.name] = analyzeFileStructure(file, data);
+                    await new Promise(resolve => setTimeout(resolve, 500)); // Simulate processing time
+                } catch (error) {
+                    console.error('Erro ao analisar arquivo:', file.name, error);
+                }
+            }
+            
+            showLoading(false);
+            displayAnalysisResults();
+            setTimeout(() => goToStep(3), 2000);
+        }
+
+        function readFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const content = e.target.result;
+                    
+                    if (file.name.endsWith('.csv')) {
+                        Papa.parse(content, {
+                            header: true,
+                            complete: (results) => resolve(results.data),
+                            error: reject
+                        });
+                    } else if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+                        const workbook = XLSX.read(content, { type: 'binary' });
+                        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                        const data = XLSX.utils.sheet_to_json(firstSheet);
+                        resolve(data);
+                    } else if (file.name.endsWith('.json')) {
+                        resolve(JSON.parse(content));
+                    }
+                };
+                
+                reader.onerror = reject;
+                
+                if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+                    reader.readAsBinaryString(file);
+                } else {
+                    reader.readAsText(file);
+                }
+            });
+        }
+
+        function analyzeFileStructure(file, data) {
+            if (!data || data.length === 0) return null;
+            
+            const sample = data.slice(0, 100); // Analyze first 100 rows
+            const fields = {};
+            
+            // Get headers
+            const headers = Object.keys(sample[0]);
+            
+            headers.forEach(header => {
+                const values = sample.map(row => row[header]).filter(val => val != null && val !== '');
+                
+                fields[header] = {
+                    name: header,
+                    type: inferDataType(values),
+                    example: values[0] || '',
+                    required: calculateRequiredStatus(sample, header),
+                    description: generateDescription(header),
+                    domain: extractDomain(values),
+                    nullCount: sample.length - values.length
+                };
+            });
+            
+            return {
+                fileName: file.name,
+                fileSize: file.size,
+                recordCount: data.length,
+                fieldCount: headers.length,
+                fields: fields,
+                encoding: 'UTF-8', // Assumption
+                structure: 'tabular',
+                fileType: getFileType(file.name)
+            };
+        }
+
+        function inferDataType(values) {
+            if (values.length === 0) return 'string';
+            
+            // Check for numbers
+            const numericValues = values.filter(val => !isNaN(val) && val !== '');
+            if (numericValues.length > values.length * 0.8) {
+                // Check for integers vs floats
+                const hasDecimals = numericValues.some(val => val.toString().includes('.'));
+                return hasDecimals ? 'float' : 'int';
+            }
+            
+            // Check for dates
+            const dateValues = values.filter(val => {
+                const date = new Date(val);
+                return !isNaN(date.getTime());
+            });
+            if (dateValues.length > values.length * 0.8) {
+                return 'date';
+            }
+            
+            // Check for booleans
+            const boolValues = values.filter(val => 
+                ['true', 'false', '1', '0', 'sim', 'não', 'yes', 'no'].includes(val.toString().toLowerCase())
+            );
+            if (boolValues.length > values.length * 0.8) {
+                return 'boolean';
+            }
+            
+            return 'string';
+        }
+
+        function calculateRequiredStatus(data, field) {
+            const nullCount = data.filter(row => !row[field] || row[field] === '').length;
+            return nullCount < data.length * 0.1 ? 'sim' : 'não';
+        }
+
+        function generateDescription(fieldName) {
+            const descriptions = {
+                'id': 'Identificador único do registro',
+                'nome': 'Nome ou denominação',
+                'email': 'Endereço de email',
+                'data': 'Data do registro',
+                'status': 'Status atual do item',
+                'codigo': 'Código identificador',
+                'latitude': 'Coordenada de latitude',
+                'longitude': 'Coordenada de longitude',
+                'endereco': 'Endereço completo',
+                'telefone': 'Número de telefone',
+                'valor': 'Valor monetário',
+                'quantidade': 'Quantidade numérica',
+                'descricao': 'Descrição detalhada',
+                'observacoes': 'Observações adicionais'
+            };
+            
+            const lowerField = fieldName.toLowerCase();
+            for (let key in descriptions) {
+                if (lowerField.includes(key)) {
+                    return descriptions[key];
+                }
+            }
+            
+            return `Campo ${fieldName}`;
+        }
+
+        function extractDomain(values) {
+            const uniqueValues = [...new Set(values)];
+            if (uniqueValues.length <= 10 && uniqueValues.length > 1) {
+                return uniqueValues.join(', ');
+            }
+            return '';
+        }
+
+        function getFileType(fileName) {
+            const extension = fileName.split('.').pop().toLowerCase();
+            const types = {
+                'csv': 'CSV',
+                'xlsx': 'XLSX',
+                'xls': 'XLS',
+                'json': 'JSON'
+            };
+            return types[extension] || 'Unknown';
+        }
+
+        function displayAnalysisResults() {
+            const resultsDiv = document.getElementById('analysisResults');
+            let html = '<div class="alert alert-success"><i class="fas fa-check-circle me-2"></i>Análise concluída com sucesso!</div>';
+            
+            html += '<h5 class="mt-4">Resultados da Análise:</h5>';
+            
+            Object.values(analyzedData).forEach(fileData => {
+                if (fileData) {
+                    html += `
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <strong>${fileData.fileName}</strong>
+                                <span class="badge bg-info ms-2">${fileData.recordCount} registros</span>
+                                <span class="badge bg-secondary ms-1">${fileData.fieldCount} campos</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <small><strong>Tipo:</strong> ${fileData.fileType}</small><br>
+                                        <small><strong>Estrutura:</strong> ${fileData.structure}</small>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <small><strong>Tamanho:</strong> ${(fileData.fileSize / 1024).toFixed(1)} KB</small><br>
+                                        <small><strong>Codificação:</strong> ${fileData.encoding}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+
+        function populateFieldsEditor() {
+            const editor = document.getElementById('fieldsEditor');
+            editor.innerHTML = '';
+            
+            let autoFilledCount = 0;
+            let manualRequiredCount = 0;
+            
+            // Set global file name
+            const firstFile = Object.keys(analyzedData)[0];
+            document.getElementById('globalFileName').value = firstFile || '';
+            
+            Object.values(analyzedData).forEach(fileData => {
+                if (!fileData) return;
+                
+                Object.values(fileData.fields).forEach(field => {
+                    const fieldRow = createFieldEditor(field, fileData.fileName);
+                    editor.appendChild(fieldRow);
+                    
+                    // Count auto-filled vs manual fields
+                    if (field.description && field.type && field.example) {
+                        autoFilledCount++;
+                    } else {
+                        manualRequiredCount++;
+                    }
+                });
+            });
+            
+            document.getElementById('autoFilledCount').textContent = autoFilledCount;
+            document.getElementById('manualRequiredCount').textContent = manualRequiredCount;
+        }
+
+        function createFieldEditor(field, fileName) {
+            const div = document.createElement('div');
+            div.className = `field-row ${field.description ? 'auto-filled' : 'manual-required'}`;
+            
+            div.innerHTML = `
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="form-label">Campo</label>
+                        <input type="text" class="form-control" value="${field.name}" readonly>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Tipo</label>
+                        <select class="form-select" data-field="type">
+                            <option value="string" ${field.type === 'string' ? 'selected' : ''}>String</option>
+                            <option value="int" ${field.type === 'int' ? 'selected' : ''}>Integer</option>
+                            <option value="float" ${field.type === 'float' ? 'selected' : ''}>Float</option>
+                            <option value="date" ${field.type === 'date' ? 'selected' : ''}>Date</option>
+                            <option value="boolean" ${field.type === 'boolean' ? 'selected' : ''}>Boolean</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Descrição *</label>
+                        <input type="text" class="form-control" data-field="description" 
+                               value="${field.description}" placeholder="Descrição do campo" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Exemplo</label>
+                        <input type="text" class="form-control" data-field="example" 
+                               value="${field.example}" placeholder="Valor de exemplo">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2">
+                        <label class="form-label">Obrigatório</label>
+                        <select class="form-select" data-field="required">
+                            <option value="sim" ${field.required === 'sim' ? 'selected' : ''}>Sim</option>
+                            <option value="não" ${field.required === 'não' ? 'selected' : ''}>Não</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Domínio/Valores</label>
+                        <input type="text" class="form-control" data-field="domain" 
+                               value="${field.domain}" placeholder="Valores possíveis">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Observações</label>
+                        <input type="text" class="form-control" data-field="observations" 
+                               placeholder="Observações adicionais">
+                    </div>
+                </div>
+                <input type="hidden" data-field="fileName" value="${fileName}">
+                <input type="hidden" data-field="fieldName" value="${field.name}">
+            `;
+            
+            return div;
+        }
+
+        function goToStep(stepNumber) {
+            // Update step indicator
+            document.querySelectorAll('.step').forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index + 1 < stepNumber) {
+                    step.classList.add('completed');
+                } else if (index + 1 === stepNumber) {
+                    step.classList.add('active');
+                }
+            });
+            
+            // Hide all sections
+            document.querySelectorAll('[id$="Section"]').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show current section
+            switch (stepNumber) {
+                case 1:
+                    document.getElementById('uploadSection').style.display = 'block';
+                    break;
+                case 2:
+                    document.getElementById('analysisSection').style.display = 'block';
+                    analyzeFiles();
+                    break;
+                case 3:
+                    document.getElementById('editingSection').style.display = 'block';
+                    populateFieldsEditor();
+                    break;
+                case 4:
+                    document.getElementById('publicationSection').style.display = 'block';
+                    generatePreview();
+                    break;
+            }
+            
+            currentStep = stepNumber;
+        }
+
+        function generatePreview() {
+            const tbody = document.getElementById('previewTableBody');
+            tbody.innerHTML = '';
+            
+            // Collect data from editor
+            dictionaryData = [];
+            document.querySelectorAll('.field-row').forEach(row => {
+                const fieldData = {
+                    arquivo: row.querySelector('[data-field="fileName"]').value,
+                    campo: row.querySelector('[data-field="fieldName"]').value,
+                    tipo: row.querySelector('[data-field="type"]').value,
+                    descricao: row.querySelector('[data-field="description"]').value,
+                    exemplo: row.querySelector('[data-field="example"]').value,
+                    obrigatorio: row.querySelector('[data-field="required"]').value,
+                    dominio: row.querySelector('[data-field="domain"]').value,
+                    observacoes: row.querySelector('[data-field="observations"]').value,
+                    tema: document.getElementById('globalTheme').value,
+                    responsavel: document.getElementById('globalResponsible').value,
+                    licenca: document.getElementById('globalLicense').value,
+                    'frequencia de atualizacao': document.getElementById('globalFrequency').value,
+                    'cobertura geografica': document.getElementById('globalGeoCoverage').value,
+                    'descricao do dado': document.getElementById('globalDescription').value,
+                    'observacoes gerais': document.getElementById('globalObservations').value,
+                    'data ultima atualizacao': new Date().toISOString().split('T')[0]
+                };
+                
+                dictionaryData.push(fieldData);
+                
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${fieldData.campo}</td>
+                    <td><span class="badge bg-info">${fieldData.tipo}</span></td>
+                    <td>${fieldData.descricao}</td>
+                    <td><span class="badge ${fieldData.obrigatorio === 'sim' ? 'bg-success' : 'bg-warning'}">${fieldData.obrigatorio}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function publishDictionary() {
+            showLoading(true);
+            
+            // Simulate publication process
+            setTimeout(() => {
+                showLoading(false);
+                
+                // Generate CSV content
+                const csvContent = generateCSVContent();
+                
+                // Show success message with download link
+                const resultDiv = document.getElementById('publicationResult');
+                resultDiv.innerHTML = `
+                    <div class="alert alert-success">
+                        <h5><i class="fas fa-check-circle me-2"></i>Dicionário Publicado com Sucesso!</h5>
+                        <p>O dicionário foi gerado e está pronto para download.</p>
+                        <button class="btn btn-success me-2" onclick="downloadDictionary()">
+                            <i class="fas fa-download me-2"></i>Baixar CSV
+                        </button>
+                        <button class="btn btn-primary" onclick="viewDictionary()">
+                            <i class="fas fa-eye me-2"></i>Visualizar na Página Principal
+                        </button>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <h6>Próximos Passos:</h6>
+                        <ol>
+                            <li>Baixe o arquivo CSV gerado</li>
+                            <li>Adicione o arquivo à pasta <code>dados/</code> do repositório</li>
+                            <li>Faça commit e push das alterações</li>
+                            <li>O GitHub Pages atualizará automaticamente</li>
+                        </ol>
+                    </div>
+                `;
+                
+                // Store data for download
+                window.generatedDictionaryCSV = csvContent;
+            }, 2000);
+        }
+
+        function generateCSVContent() {
+            if (dictionaryData.length === 0) return '';
+            
+            const headers = Object.keys(dictionaryData[0]);
+            const csvRows = [headers.join(',')];
+            
+            dictionaryData.forEach(row => {
+                const values = headers.map(header => {
+                    const value = row[header] || '';
+                    return `"${value.toString().replace(/"/g, '""')}"`;
+                });
+                csvRows.push(values.join(','));
+            });
+            
+            return csvRows.join('\n');
+        }
+
+        function downloadDictionary() {
+            if (!window.generatedDictionaryCSV) {
+                alert('Nenhum dicionário gerado para download.');
+                return;
+            }
+            
+            const blob = new Blob([window.generatedDictionaryCSV], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `dicionario_dados_${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function viewDictionary() {
+            window.location.href = 'index.html';
+        }
+
+        function toggleAllFields() {
+            const fieldRows = document.querySelectorAll('.field-row');
+            const isExpanded = fieldRows[0]?.classList.contains('expanded');
+            
+            fieldRows.forEach(row => {
+                if (isExpanded) {
+                    row.classList.remove('expanded');
+                } else {
+                    row.classList.add('expanded');
+                }
+            });
+        }
+
+        function showLoading(show) {
+            const overlay = document.getElementById('loadingOverlay');
+            overlay.style.display = show ? 'flex' : 'none';
+        }
+
+        function showAlert(type, message) {
+            const alertClass = type === 'error' ? 'alert-danger' : 'alert-success';
+            const icon = type === 'error' ? 'fas fa-exclamation-triangle' : 'fas fa-check-circle';
+            
+            const alertHtml = `
+                <div class="alert ${alertClass} alert-dismissible fade show" role="alert">
+                    <i class="${icon} me-2"></i>${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+            
+            document.querySelector('.container').insertAdjacentHTML('afterbegin', alertHtml);
+            
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                const alert = document.querySelector('.alert');
+                if (alert) {
+                    alert.remove();
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

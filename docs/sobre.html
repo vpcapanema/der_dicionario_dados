@@ -1,0 +1,599 @@
+---
+layout: default
+title: "Sobre"
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Dicionário DER-SP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-outline-primary {
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 0.25rem;
+            font-weight: 500;
+        }
+
+        .contributor-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .contributor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contributor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 1rem;
+            }
+            
+            .timeline {
+                padding-left: 1rem;
+            }
+            
+            .timeline::before {
+                left: 0.5rem;
+            }
+            
+            .timeline-item::before {
+                left: -1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-database me-2"></i>DER-SP Data</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-search me-1"></i>Consultar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="publicar.html"><i class="fas fa-upload me-1"></i>Publicar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-info-circle me-1"></i>Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1><i class="fas fa-info-circle me-3"></i>Sobre o Projeto</h1>
+            <p class="lead">Conheça mais sobre o Dicionário de Dados DER-SP</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Project Overview -->
+        <div class="content-section">
+            <h2><i class="fas fa-bullseye me-2"></i>Objetivo do Projeto</h2>
+            <p class="lead">O Dicionário de Dados DER-SP é uma iniciativa para promover a transparência e facilitar o reuso dos dados abertos do Departamento de Estradas de Rodagem do Estado de São Paulo.</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h4>Missão</h4>
+                    <p>Tornar os dados públicos do DER-SP mais acessíveis, compreensíveis e reutilizáveis através de documentação padronizada e ferramentas interativas.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Visão</h4>
+                    <p>Ser referência em transparência de dados públicos rodoviários, facilitando pesquisas, análises e desenvolvimento de soluções baseadas em dados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="content-section">
+            <h2><i class="fas fa-star me-2"></i>Funcionalidades</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h5>Consulta Interativa</h5>
+                        <p>Interface moderna para busca e filtros avançados nos metadados dos conjuntos de dados.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <h5>Publicação Assistida</h5>
+                        <p>Sistema automatizado para análise de dados e geração de dicionários com mínima intervenção manual.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h5>Exportação Múltipla</h5>
+                        <p>Exportação dos dicionários em diversos formatos: CSV, Excel, PDF e JSON.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h5>Design Responsivo</h5>
+                        <p>Interface adaptativa que funciona perfeitamente em desktops, tablets e smartphones.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h5>IA Integrada</h5>
+                        <p>Algoritmos inteligentes para inferência automática de tipos de dados e metadados.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h5>Padrões Abertos</h5>
+                        <p>Seguimento de padrões internacionais para metadados e dados abertos governamentais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="content-section">
+            <h2><i class="fas fa-chart-bar me-2"></i>Estatísticas do Projeto</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <div class="stat-label">Conjuntos de Dados</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <div class="stat-label">Campos Documentados</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <div class="stat-label">Formatos Suportados</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Open Source</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technologies -->
+        <div class="content-section">
+            <h2><i class="fas fa-code me-2"></i>Tecnologias Utilizadas</h2>
+            <p>Este projeto foi desenvolvido utilizando tecnologias modernas e padrões web:</p>
+            
+            <h5>Frontend</h5>
+            <div class="mb-3">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript ES6+</span>
+                <span class="tech-badge">Bootstrap 5</span>
+                <span class="tech-badge">Font Awesome</span>
+                <span class="tech-badge">DataTables</span>
+            </div>
+            
+            <h5>Análise de Dados</h5>
+            <div class="mb-3">
+                <span class="tech-badge">Papa Parse</span>
+                <span class="tech-badge">SheetJS</span>
+                <span class="tech-badge">jsPDF</span>
+                <span class="tech-badge">Chart.js</span>
+            </div>
+            
+            <h5>Infraestrutura</h5>
+            <div class="mb-3">
+                <span class="tech-badge">GitHub Pages</span>
+                <span class="tech-badge">Jekyll</span>
+                <span class="tech-badge">GitHub Actions</span>
+                <span class="tech-badge">CDN</span>
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="content-section">
+            <h2><i class="fas fa-road me-2"></i>Roadmap do Projeto</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h5><i class="fas fa-check-circle text-success me-2"></i>Fase 1 - Concluída</h5>
+                    <ul>
+                        <li>Interface de consulta interativa</li>
+                        <li>Sistema de filtros e busca</li>
+                        <li>Exportação básica</li>
+                        <li>Design responsivo</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h5><i class="fas fa-check-circle text-success me-2"></i>Fase 2 - Concluída</h5>
+                    <ul>
+                        <li>Sistema de publicação assistida</li>
+                        <li>Análise automática de dados</li>
+                        <li>Inferência de tipos e metadados</li>
+                        <li>Interface de edição manual</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h5><i class="fas fa-clock text-warning me-2"></i>Fase 3 - Em Desenvolvimento</h5>
+                    <ul>
+                        <li>API REST para integração</li>
+                        <li>Sistema de versionamento</li>
+                        <li>Validação avançada de dados</li>
+                        <li>Integração com GitHub Actions</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h5><i class="fas fa-lightbulb text-info me-2"></i>Fase 4 - Planejada</h5>
+                    <ul>
+                        <li>Dashboard analytics</li>
+                        <li>Sistema de notificações</li>
+                        <li>Integração com CKAN</li>
+                        <li>Aplicativo mobile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="content-section">
+            <h2><i class="fas fa-users me-2"></i>Equipe</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="contributor-card">
+                        <div class="contributor-avatar">
+                            DER
+                        </div>
+                        <h5>DER-SP</h5>
+                        <p class="text-muted">Departamento de Estradas de Rodagem</p>
+                        <p>Órgão responsável pela gestão e manutenção das rodovias estaduais de São Paulo.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contributor-card">
+                        <div class="contributor-avatar">
+                            TI
+                        </div>
+                        <h5>Equipe de TI</h5>
+                        <p class="text-muted">Tecnologia da Informação</p>
+                        <p>Responsável pelo desenvolvimento e manutenção da plataforma tecnológica.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="contributor-card">
+                        <div class="contributor-avatar">
+                            OSS
+                        </div>
+                        <h5>Comunidade</h5>
+                        <p class="text-muted">Open Source</p>
+                        <p>Contribuidores da comunidade de código aberto e dados abertos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contributing -->
+        <div class="content-section">
+            <h2><i class="fas fa-handshake me-2"></i>Como Contribuir</h2>
+            <p>Este é um projeto de código aberto e sua colaboração é bem-vinda! Existem várias formas de contribuir:</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-bug me-2"></i>Reportar Problemas</h5>
+                    <p>Encontrou um bug ou tem uma sugestão? Abra uma issue no GitHub com detalhes do problema ou melhoria.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5><i class="fas fa-code-branch me-2"></i>Contribuir com Código</h5>
+                    <p>Faça fork do repositório, implemente suas melhorias e envie um pull request.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5><i class="fas fa-database me-2"></i>Melhorar Dados</h5>
+                    <p>Ajude a melhorar a qualidade dos metadados e documentação dos conjuntos de dados.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5><i class="fas fa-book me-2"></i>Documentação</h5>
+                    <p>Contribua com exemplos, tutoriais e melhore a documentação existente.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://github.com/seu-usuario/der_dicionario_dados" class="btn btn-primary me-2">
+                    <i class="fab fa-github me-2"></i>Ver no GitHub
+                </a>
+                <a href="https://github.com/seu-usuario/der_dicionario_dados/issues" class="btn btn-outline-primary">
+                    <i class="fas fa-exclamation-circle me-2"></i>Reportar Issue
+                </a>
+            </div>
+        </div>
+
+        <!-- License -->
+        <div class="content-section">
+            <h2><i class="fas fa-balance-scale me-2"></i>Licença</h2>
+            <div class="alert alert-info">
+                <h5><i class="fas fa-info-circle me-2"></i>Creative Commons BY 4.0</h5>
+                <p class="mb-0">
+                    Este projeto está licenciado sob a licença Creative Commons Attribution 4.0 International. 
+                    Você é livre para usar, compartilhar, modificar e distribuir este trabalho, desde que forneça 
+                    a devida atribuição aos autores originais.
+                </p>
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-share-alt fa-2x text-success mb-2"></i>
+                    <h6>Compartilhar</h6>
+                    <small>Copie e redistribua</small>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-edit fa-2x text-primary mb-2"></i>
+                    <h6>Adaptar</h6>
+                    <small>Modifique e crie derivações</small>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-dollar-sign fa-2x text-warning mb-2"></i>
+                    <h6>Uso Comercial</h6>
+                    <small>Permitido uso comercial</small>
+                </div>
+                <div class="col-md-3 text-center">
+                    <i class="fas fa-user-tag fa-2x text-info mb-2"></i>
+                    <h6>Atribuição</h6>
+                    <small>Credite os autores</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="content-section">
+            <h2><i class="fas fa-envelope me-2"></i>Contato</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>DER-SP</h5>
+                    <p>
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        Av. do Estado, 777 - Ponte Pequena<br>
+                        São Paulo - SP, 01107-901
+                    </p>
+                    <p>
+                        <i class="fas fa-phone me-2"></i>
+                        (11) 3311-1100
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope me-2"></i>
+                        dadosabertos@der.sp.gov.br
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-globe me-2"></i><a href="https://www.der.sp.gov.br" target="_blank">Site Oficial DER-SP</a></li>
+                        <li><i class="fas fa-database me-2"></i><a href="https://dados.der.sp.gov.br" target="_blank">Portal de Dados Abertos</a></li>
+                        <li><i class="fab fa-github me-2"></i><a href="https://github.com/der-sp" target="_blank">GitHub DER-SP</a></li>
+                        <li><i class="fas fa-question-circle me-2"></i><a href="#" target="_blank">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>&copy; 2025 DER-SP. Licenciado sob CC-BY 4.0.</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
